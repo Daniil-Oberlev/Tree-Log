@@ -1,0 +1,19 @@
+data:
+  filepath: "data/data.csv"
+
+outputs:
+  graphs_dir: "outputs/graphs"
+  base_tree: "decision_tree_base.png"
+  tuned_tree: "decision_tree_tuned.png"
+
+model:
+  test_size: 0.2
+  random_state: 42
+  cv_folds: 5
+  grid_params:
+    criterion: ["gini", "entropy"]
+    splitter: ["best", "random"]
+    max_depth: [3, 5, 10, None]
+    max_features: [[], 3, 5, 7]
+    min_samples_leaf: [1, 2, 3]
+    min_samples_split: [2, 3, 5]
